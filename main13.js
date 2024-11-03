@@ -11,6 +11,13 @@ fetch('https://www.course-api.com/javascript-store-products')
     data.forEach(product => displayProduct(product));
 })
 
+//Task 4: Handle Errors Gracefully
+
+.catch(error => {
+    console.error('Error fetching products:', error);
+    container.innerHTML = `<p>Failed to load products. Please try again later.</p>`;
+});
+
 // Task 3: Display Product Details Dynamically
 function displayProduct(product) {
     const productElement = document.createElement('div');
